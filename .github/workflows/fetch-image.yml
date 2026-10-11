@@ -1,17 +1,14 @@
-name: Fetch image
+name: Fetch images
 
-# Downloads an exported image from a temporary URL (such as a Canva export link)
-# and saves it to images/<name>.png so it has a permanent public URL.
+# Downloads exported images from temporary URLs (such as Canva export links)
+# and saves each to images/<name>.png so it has a permanent public URL.
 # Run by the GMT automation. Only PNG files are accepted.
 
 on:
   workflow_dispatch:
     inputs:
-      url:
-        description: "Temporary https URL of the exported PNG"
-        required: true
-      name:
-        description: "File name without extension, e.g. basic-tee-001"
+      items:
+        description: "One image per line: <name> <https url>. Names are lowercase letters, digits, hyphens."
         required: true
 
 permissions:
@@ -27,38 +24,39 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate name
+      - name: Download, check, and save
         env:
-          NAME: ${{ inputs.name }}
-        run: |
-          if ! [[ "$NAME" =~ ^[a-z0-9][a-z0-9-]{0,80}$ ]]; then
-            echo "::error title=Bad name::name must be lowercase letters, digits, and hyphens"
-            exit 1
-          fi
-
-      - name: Download and check
-        env:
-          URL: ${{ inputs.url }}
-          NAME: ${{ inputs.name }}
+          ITEMS: ${{ inputs.items }}
         run: |
           mkdir -p images
-          if [[ "$URL" != https://* ]]; then
-            echo "::error title=Bad URL::url must start with https://"; exit 1
-          fi
-          curl -sS --fail -L --max-time 60 --max-filesize 15000000 -o "images/$NAME.png" "$URL"
-          if ! file "images/$NAME.png" | grep -q "PNG image data"; then
-            echo "::error title=Not a PNG::downloaded file is not a PNG"
-            rm -f "images/$NAME.png"; exit 1
-          fi
-          file "images/$NAME.png"
+          fail=0
+          while read -r name url; do
+            [ -z "$name" ] && continue
+            if ! [[ "$name" =~ ^[a-z0-9][a-z0-9-]{0,80}$ ]]; then
+              echo "::error title=Bad name::$name must be lowercase letters, digits, and hyphens"; fail=1; continue
+            fi
+            if [[ "$url" != https://* ]]; then
+              echo "::error title=Bad URL::$name url must start with https://"; fail=1; continue
+            fi
+            if ! curl -sS --fail -L --max-time 60 --max-filesize 15000000 -o "images/$name.png" "$url"; then
+              echo "::error title=Download failed::$name"; rm -f "images/$name.png"; fail=1; continue
+            fi
+            if ! file "images/$name.png" | grep -q "PNG image data"; then
+              echo "::error title=Not a PNG::$name"; rm -f "images/$name.png"; fail=1; continue
+            fi
+            echo "saved $name"
+          done <<< "$ITEMS"
+          echo "FAIL=$fail" >> "$GITHUB_ENV"
 
-      - name: Commit image
-        env:
-          NAME: ${{ inputs.name }}
+      - name: Commit images
         run: |
           git config user.name "gmt-automation-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add "images/$NAME.png"
-          git diff --cached --quiet || git commit -m "Add image $NAME"
+          git add images
+          git diff --cached --quiet || git commit -m "Add images"
           git pull --rebase origin main
           git push
+
+      - name: Fail if any image failed
+        if: env.FAIL == '1'
+        run: exit 1
