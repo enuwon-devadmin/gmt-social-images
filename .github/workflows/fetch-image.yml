@@ -1,0 +1,64 @@
+name: Fetch image
+
+# Downloads an exported image from a temporary URL (such as a Canva export link)
+# and saves it to images/<name>.png so it has a permanent public URL.
+# Run by the GMT automation. Only PNG files are accepted.
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "Temporary https URL of the exported PNG"
+        required: true
+      name:
+        description: "File name without extension, e.g. basic-tee-001"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: images
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate name
+        env:
+          NAME: ${{ inputs.name }}
+        run: |
+          if ! [[ "$NAME" =~ ^[a-z0-9][a-z0-9-]{0,80}$ ]]; then
+            echo "::error title=Bad name::name must be lowercase letters, digits, and hyphens"
+            exit 1
+          fi
+
+      - name: Download and check
+        env:
+          URL: ${{ inputs.url }}
+          NAME: ${{ inputs.name }}
+        run: |
+          mkdir -p images
+          if [[ "$URL" != https://* ]]; then
+            echo "::error title=Bad URL::url must start with https://"; exit 1
+          fi
+          curl -sS --fail -L --max-time 60 --max-filesize 15000000 -o "images/$NAME.png" "$URL"
+          if ! file "images/$NAME.png" | grep -q "PNG image data"; then
+            echo "::error title=Not a PNG::downloaded file is not a PNG"
+            rm -f "images/$NAME.png"; exit 1
+          fi
+          file "images/$NAME.png"
+
+      - name: Commit image
+        env:
+          NAME: ${{ inputs.name }}
+        run: |
+          git config user.name "gmt-automation-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add "images/$NAME.png"
+          git diff --cached --quiet || git commit -m "Add image $NAME"
+          git pull --rebase origin main
+          git push
