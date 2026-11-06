@@ -1,0 +1,47 @@
+name: Render product posts
+
+# Builds branded post images (headline + real product photo + logo) from a batch
+# spec in render/. Writes images/<name>.png (feed, 4:5) and images/<name>-tiktok.png (9:16).
+# Product photos are downloaded at run time from the shop and Amazon.
+
+on:
+  workflow_dispatch:
+    inputs:
+      spec:
+        description: "Batch spec file in render/"
+        default: "batch03.json"
+      only:
+        description: "Optional comma-separated names to re-render (blank = all)"
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: images
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow==11.*
+      - name: Render
+        id: render
+        continue-on-error: true
+        run: python render/render_posts.py "render/${{ inputs.spec }}" "${{ inputs.only }}"
+      - name: Commit images
+        run: |
+          git config user.name "gmt-automation-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add images
+          git diff --cached --quiet || git commit -m "Render product posts (${{ inputs.spec }})"
+          git pull --rebase origin main
+          git push
+      - name: Fail if any render failed
+        if: steps.render.outcome == 'failure'
+        run: exit 1
