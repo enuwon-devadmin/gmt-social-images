@@ -1,39 +1,129 @@
 [
-  {"name": "b3-genx-tee", "headline": "Gift for your favorite Gen Xer", "sub": "The X is for eXhausted.",
-   "images": ["https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-black-front-6834d487cbd37.jpg"]},
-  {"name": "b3-not-friendly-mug", "headline": "The office mug that sets boundaries", "sub": "Resting Friendly Face, handled.",
-   "images": ["https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-683616338f1bf.jpg"]},
-  {"name": "b3-hate-journal", "headline": "Why I Hate Everyone: a memoir", "sub": "A journal for your daily irritations.",
-   "images": ["https://m.media-amazon.com/images/I/41y7dWreq9L._SL1500_.jpg"]},
-  {"name": "b3-no-adulting-tee", "headline": "Grown-up? Couldn't be me.", "sub": "For the friend who needs a break from their to-do list.",
-   "images": ["https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-black-front-6834d769e67e2.jpg"]},
-  {"name": "b3-domination-journal", "headline": "Every empire starts with a plan", "sub": "A journal for aspiring evil geniuses.",
-   "images": ["https://m.media-amazon.com/images/I/41fza83B3XL._SL1500_.jpg"]},
-  {"name": "b3-meh-mug", "headline": "Maximum apathy. Minimal effort.", "sub": "For the coworker who truly cannot.",
-   "images": ["https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-683619c6cc7a9.jpg"]},
-  {"name": "b3-shenanigans-tee", "headline": "Holiday party uniform", "sub": "You've Shenan'd before.",
-   "images": ["https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-black-front-6834db8305b56.jpg"]},
-  {"name": "b3-genx-mug", "headline": "Emotional support coffee", "sub": "The X is for eXhausted.",
-   "images": ["https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-68361729da043.jpg"]},
-  {"name": "b3-gift-guide", "headline": "The tired person's gift guide", "sub": "For the people who are done. Lovingly.",
-   "images": ["https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-black-front-6834d487cbd37.jpg",
-              "https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-683616338f1bf.jpg",
-              "https://m.media-amazon.com/images/I/41y7dWreq9L._SL1500_.jpg",
-              "https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-683619c6cc7a9.jpg"]},
-  {"name": "b3-not-friendly-tee", "headline": "Wear the warning label", "sub": "For people with Resting Friendly Face.",
-   "images": ["https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-black-front-6834d8dba3cd5.jpg"]},
-  {"name": "b3-designated-cat-mug", "headline": "For your favorite cat's human", "sub": "Designated kitty safe space.",
-   "images": ["https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-683627e3f1ead.jpg"]},
-  {"name": "b3-life-tee", "headline": "No user manual included", "sub": "Warning: contents may vary.",
-   "images": ["https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-white-front-6834d5bec8f5c.jpg"]},
-  {"name": "b3-boughetto-mug", "headline": "Boardroom to going board", "sub": "For your favorite high-performing hood intellectual.",
-   "images": ["https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-683617aa81231.jpg"]},
-  {"name": "b3-journals", "headline": "Journals for the deeply unbothered", "sub": "Two hardcover gifts for plotters and grudge keepers.",
-   "images": ["https://m.media-amazon.com/images/I/41y7dWreq9L._SL1500_.jpg",
-              "https://m.media-amazon.com/images/I/41fza83B3XL._SL1500_.jpg"]},
-  {"name": "b3-last-call", "headline": "Last call for Christmas gifts", "sub": "Order today with standard shipping.",
-   "images": ["https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-black-front-6834d769e67e2.jpg",
-              "https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-68361729da043.jpg",
-              "https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-black-front-6834d8dba3cd5.jpg",
-              "https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-683627e3f1ead.jpg"]}
+ {
+  "name": "b3-genx-tee",
+  "headline": "A perfect gift for your favorite Gen-Xer",
+  "sub": "The X is for eXhausted.",
+  "images": [
+   "https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-black-front-6834d487cbd37.jpg"
+  ]
+ },
+ {
+  "name": "b3-not-friendly-mug",
+  "headline": "The office mug that sets boundaries",
+  "sub": "Resting Friendly Face, handled.",
+  "images": [
+   "https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-683616338f1bf.jpg"
+  ]
+ },
+ {
+  "name": "b3-hate-journal",
+  "headline": "Why I Hate Everyone: a memoir",
+  "sub": "A journal for your daily irritations.",
+  "images": [
+   "https://m.media-amazon.com/images/I/41y7dWreq9L._SL1500_.jpg"
+  ]
+ },
+ {
+  "name": "b3-no-adulting-tee",
+  "headline": "Grown-up? Couldn't be me.",
+  "sub": "For anyone ready to rip up that to-do list.",
+  "images": [
+   "https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-black-front-6834d769e67e2.jpg"
+  ]
+ },
+ {
+  "name": "b3-domination-journal",
+  "headline": "Every empire starts with a plan",
+  "sub": "A journal for aspiring evil geniuses.",
+  "images": [
+   "https://m.media-amazon.com/images/I/41fza83B3XL._SL1500_.jpg"
+  ]
+ },
+ {
+  "name": "b3-meh-mug",
+  "headline": "Maximum apathy. Minimal effort.",
+  "sub": "For the coworker who truly cannot.",
+  "images": [
+   "https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-683619c6cc7a9.jpg"
+  ]
+ },
+ {
+  "name": "b3-shenanigans-tee",
+  "headline": "Holiday party uniform",
+  "sub": "You've Shenan'd before.",
+  "images": [
+   "https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-black-front-6834db8305b56.jpg"
+  ]
+ },
+ {
+  "name": "b3-genx-mug",
+  "headline": "Emotional support coffee receptacle",
+  "sub": "The X is for eXhausted.",
+  "images": [
+   "https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-68361729da043.jpg"
+  ]
+ },
+ {
+  "name": "b3-gift-guide",
+  "headline": "The tired person's gift guide",
+  "sub": "For the people who are done. Lovingly.",
+  "images": [
+   "https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-black-front-6834d487cbd37.jpg",
+   "https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-683616338f1bf.jpg",
+   "https://m.media-amazon.com/images/I/41y7dWreq9L._SL1500_.jpg",
+   "https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-683619c6cc7a9.jpg"
+  ]
+ },
+ {
+  "name": "b3-not-friendly-tee",
+  "headline": "“Read the sign!”",
+  "sub": "For people with Resting Friendly Face.",
+  "images": [
+   "https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-black-front-6834d8dba3cd5.jpg"
+  ]
+ },
+ {
+  "name": "b3-designated-cat-mug",
+  "headline": "For your favorite cat's human",
+  "sub": "Designated kitty safe space.",
+  "images": [
+   "https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-683627e3f1ead.jpg"
+  ]
+ },
+ {
+  "name": "b3-life-tee",
+  "headline": "No user manual included",
+  "sub": "Warning: contents may vary.",
+  "images": [
+   "https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-white-front-6834d5bec8f5c.jpg"
+  ]
+ },
+ {
+  "name": "b3-boughetto-mug",
+  "headline": "Boardroom to going board",
+  "sub": "For your favorite high-performing hood intellectual.",
+  "images": [
+   "https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-683617aa81231.jpg"
+  ]
+ },
+ {
+  "name": "b3-journals",
+  "headline": "Journals for the deeply unbothered",
+  "sub": "Two hardcover gifts for plotters and grudge keepers.",
+  "images": [
+   "https://m.media-amazon.com/images/I/41y7dWreq9L._SL1500_.jpg",
+   "https://m.media-amazon.com/images/I/41fza83B3XL._SL1500_.jpg"
+  ]
+ },
+ {
+  "name": "b3-last-call",
+  "headline": "Last call for Christmas gifts",
+  "sub": "Order today with standard shipping.",
+  "images": [
+   "https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-black-front-6834d769e67e2.jpg",
+   "https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-68361729da043.jpg",
+   "https://geomehtrix.com/wp-content/uploads/2025/05/unisex-basic-softstyle-t-shirt-black-front-6834d8dba3cd5.jpg",
+   "https://geomehtrix.com/wp-content/uploads/2025/05/white-glossy-mug-white-11-oz-front-view-683627e3f1ead.jpg"
+  ]
+ }
 ]
